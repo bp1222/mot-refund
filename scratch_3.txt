@@ -1,0 +1,33 @@
+You are a principal software engineer at a company that is responsible for the refunding of MOT (a fuel excise tax for aircraft).
+
+I want you to create a plan to:
+
+You are charge of the development of a new system to handle the refunding of MOT. The system will be used by both internal staff and external customers.
+The system will need to handle the following requirements:
+- Tracking of aircraft
+ - Each aircraft will have a unique identifier, tail number, make, model, and year of manufacture,
+ - Each aircraft will have a history of owners, registration documents, airworthiness documents, insurance documents.
+ - Each aircraft will have a history of management companies that manage the use of the aircraft
+ - Each aircraft will have a history of clients who are engaged with a management company to use the aircraft
+
+- Owners will have a unique identifier, name, contact information, and a history of aircraft they have owned.
+
+- Management Companies will have a unique identifier, name, contact information, and a history of aircraft they manage and clients they serve.
+
+The core business is to accurately track the fuel receipts for individual flights of an aircraft, to track the MOT of the fuel
+uplifted onto the aircraft.
+
+We will have a reporting system which will be able to filter based on aircraft, owner, management company, and client over a period of time,
+  to be able to determine the amount of MOT to be refunded.
+
+We will support authentication for different levels of users: administrator, data-entry, and viewer.  The data-entry user
+will be able to insert new records of flights, with receipts, and be able to lookup and insert data for aircraft, owners, management companies, and client.
+
+The system will eventually need persisted data storage, but for this prototype implementation we should use browser local storage.
+  This system will need seed data, and a button in the menubar to reset the storage to the seed data.
+
+The system should have a dashboard, one key component is calling action to tracked aircraft that have missing certificate data, or existing
+  certificate data is close to expiring.  Aircraft are required to have valid registration, airworthiness, and insurance documents for periods
+  of time we have flight data.
+
+We will want to use React, Zustand, and Material UI.
