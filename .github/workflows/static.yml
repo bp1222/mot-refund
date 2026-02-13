@@ -31,18 +31,17 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 25
-          registry-url: 'https://npm.pkg.github.com'
+          node-version: 20
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm run build
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload dist folder
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
